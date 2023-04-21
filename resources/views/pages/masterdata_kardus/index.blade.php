@@ -28,6 +28,7 @@
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                         <tr>
+                            <th>No</th>
                             <th>ID Kardus</th>
                             <th>Jenis Kardus</th>
                             <th>Ukuran Kardus</th>
@@ -35,16 +36,24 @@
                         </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>None</td>
-                                <td>None</td>
-                                <td>None</td>
-                                <td>
-                                    <a href="{{url('kardus/edit')}}" class="btn btn-primary">Edit</a>
-                                    <a href="" class="btn btn-primary">Delete</a>
-                                    <a href="" class="btn btn-primary">Print QR</a>
-                                </td>
-                            </tr>
+                            @foreach($dataMasterKardus as $key => $masterKardus)    
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $masterKardus->id }}</td>
+                                    <td>{{ $masterKardus->jenis }}</td>
+                                    <td>{{ $masterKardus->ukuran }}</td>
+                                    <td>
+                                        <a href="{{url("kardus/edit/$masterKardus->id")}}" class="btn btn-primary">Edit</a>
+                                        <form action="{{url("kardus/destroy/$masterKardus->id")}}" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-primary">Delete</button>
+                                        </form>
+                                        
+                                        <a href="{{url("kardus/generate/$masterKardus->id")}}" class="btn btn-primary">Print QR</a>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                         <tfoot>
                         </tfoot>

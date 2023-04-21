@@ -32,19 +32,26 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <form  enctype="multipart/form-data">
+                    <form action="{{ route('kardus.update') }}" method="post" enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Jenis Kardus</label>
-                                    <input type="text" class="form-control" name="nama_bank" id="nama_bank"/>
+                                    <input type="text" class="form-control 
+                                        @error('jenis')
+                                            is-invalid
+                                        @enderror" value="{{ $jenis }}" name="jenis" id="jenis"/>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <label>Ukuran kardus</label>
-                                    <input type="text" class="form-control" name="nomor_rekening" id="nomor_rekening"/>
+                                    <input type="text" class="form-control
+                                        @error('ukuran')
+                                            is-invalid
+                                        @enderror" value="{{ $ukuran }}" name="ukuran" id="ukuran"/>
                                 </div>
                             </div>
                             <div class="form-group">

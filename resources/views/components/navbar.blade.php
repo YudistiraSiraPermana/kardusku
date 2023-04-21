@@ -18,7 +18,7 @@
         <li class="nav-item d-none d-sm-inline-block">
             <a href="" class="nav-link">Profil</a>
         </li>
-        <form method="post" action="{{url('logout')}}">
+        <form action="{{url('logout')}}">
             @csrf
             <button type="submit" class="btn-sm btn-primary" style="background-color:#FF0000; border-color:aliceblue">
                 <i class="fas fa-sign-out-alt"> Logout</i>

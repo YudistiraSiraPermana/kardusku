@@ -46,17 +46,17 @@
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
                                     <label>ID Kardus</label>
-                                    <input type="text" class="form-control" name="nomor_rekening" id="qr-code-input" readonly/>
+                                    <input type="text" class="form-control" name="qr-code-id" id="qr-code-id" readonly/>
                                 </div>
 
                                 <div class="form-group">
                                     <label>Jenis Kardus</label>
-                                    <input type="text" class="form-control" name="nama_pemilik" id="nama_pemilik" readonly/>
+                                    <input type="text" class="form-control" name="qr-code-jenis" id="qr-code-jenis" readonly/>
                                 </div>
 
                                 <div class="form-group">
                                     <label>Ukuran</label>
-                                    <input type="text" class="form-control" name="nama_pemilik" id="nama_pemilik" readonly/>
+                                    <input type="text" class="form-control" name="qr-code-ukuran" id="qr-code-ukuran" readonly/>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Stock Kardus</label>
-                                    <input type="text" class="form-control" name="nama_bank" id="nama_bank" readonly/>
+                                    <input type="text" class="form-control" name="qr-code-stock" id="qr-code-stock" readonly/>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6">

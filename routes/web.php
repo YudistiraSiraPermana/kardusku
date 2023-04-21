@@ -28,4 +28,8 @@ Route::get('transaksi/report', [TransaksiController::class, 'view']);
 
 Route::get('kardus', [MasterDataKardusController::class, 'index']);
 Route::get('kardus/create', [MasterDataKardusController::class, 'create']);
-Route::get('kardus/edit', [MasterDataKardusController::class, 'edit']);
+Route::post('kardus/store', [MasterDataKardusController::class, 'store'])->name('kardus.store');
+Route::get('kardus/edit/{id}', [MasterDataKardusController::class, 'edit']);
+Route::put('kardus/update', [MasterDataKardusController::class, 'update'])->name('kardus.update');
+Route::delete('kardus/destroy/{id}', [MasterDataKardusController::class, 'destroy']);
+Route::get('kardus/generate/{id}', [MasterDataKardusController::class, 'generate']);

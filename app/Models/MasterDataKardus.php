@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class MasterDataKardus extends Model
 {
     use HasFactory;
+    protected $table    = 'master_kardus';
+    protected $guarded  = [];
 }
