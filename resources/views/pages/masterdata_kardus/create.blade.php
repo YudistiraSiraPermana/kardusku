@@ -47,9 +47,7 @@
                                     <input type="text" class="form-control" name="ukuran" id="ukuran"/>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Add Kardus</button>
-                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Add Kardus</button>
                         </div>
                     </form>
                 </div>

@@ -27,9 +27,10 @@ class MasterDataKardusController extends Controller
         $ukuran = $request->ukuran;
 
         $data = new MasterDataKardus;
-        $data->id = $custom_id;
-        $data->jenis = $jenis;
+        $data->id       = $custom_id;
+        $data->jenis    = $jenis;
         $data->ukuran   = $ukuran;
+        $data->stock    = 0;
         $data->save();
 
         return back()->with('success', 'Master Kardus telah diisi');

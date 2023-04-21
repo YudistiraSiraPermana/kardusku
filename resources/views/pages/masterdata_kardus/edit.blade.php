@@ -54,9 +54,7 @@
                                         @enderror" value="{{ $ukuran }}" name="ukuran" id="ukuran"/>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Edit Kardus</button>
-                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Edit Kardus</button>
                         </div>
                     </form>
                 </div>

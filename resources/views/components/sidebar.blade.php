@@ -12,7 +12,11 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="info">
-                <a href="#" class="d-block">Hi, {{ auth()->user()->name }}</a>
+                @if (auth()->user()->name)
+                    <a href="#" class="d-block">Hi, {{ auth()->user()->name }}</a>
+                @else
+                    {{url('/')}}
+                @endif
                 
             </div>
         </div>

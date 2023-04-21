@@ -93,19 +93,55 @@
                             </div>
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
-                                    <label>Tambah Stock Kardus</label>
-                                    <input type="text" class="form-control" name="nomor_rekening" id="nomor_rekening"/>
+                                    <a type="button" class="btn btn-success btn-block" data-toggle="modal" data-target=".modal-tambah" >
+                                        Tambah Stok
+                                    </a>
+                                    <div class="modal fade modal-tambah" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="myModalLabel">Transaksi Stok</h4>
+                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <label>Tambah Stock kardus</label>
+                                                    <input type="number" class="form-control" name="tambah_stock" id="tambah_stock" />
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Tambah Stok</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-
                                 <div class="form-group">
-                                    <label>Kurangi Stock kardus</label>
-                                    <input type="text" class="form-control" name="nama_pemilik" id="nama_pemilik" />
+                                    <a type="button" class="btn btn-success btn-block" data-toggle="modal" data-target=".modal-tambah" >
+                                        Kurangi Stok
+                                    </a>
+                                    <div class="modal fade modal-tambah" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="myModalLabel">Transaksi Stok</h4>
+                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <label>Kuerangi Stock kardus</label>
+                                                    <input type="number" class="form-control" name="kurangi_stock" id="kurangi_stock" />
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Kurangi Stok</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Update Stock kardus</button>
-                            </div>
-                        </div>  
+                        </div>
                     </form>
                 </div>
             </div>

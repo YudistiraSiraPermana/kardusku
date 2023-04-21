@@ -43,14 +43,14 @@
                                     <td>{{ $masterKardus->jenis }}</td>
                                     <td>{{ $masterKardus->ukuran }}</td>
                                     <td>
-                                        <a href="{{url("kardus/edit/$masterKardus->id")}}" class="btn btn-primary">Edit</a>
+                                        <a href="{{url("kardus/edit/$masterKardus->id")}}" class="btn btn-primary btn-block">Edit</a>
                                         <form action="{{url("kardus/destroy/$masterKardus->id")}}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-primary">Delete</button>
+                                            <button type="submit" class="btn btn-primary btn-block">Delete</button>
                                         </form>
                                         
-                                        <a href="{{url("kardus/generate/$masterKardus->id")}}" class="btn btn-primary">Print QR</a>
+                                        <a href="{{url("kardus/generate/$masterKardus->id")}}" class="btn btn-primary btn-block">Print QR</a>
                                     </td>
                                 </tr>
                             @endforeach
