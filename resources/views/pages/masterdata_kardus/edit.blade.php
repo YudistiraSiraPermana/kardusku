@@ -9,7 +9,8 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="/kardus">Daftar Kardus</a></li>
+                        <li class="breadcrumb-item"><a href="/kardus">Master Kardus</a></li>
+                        <li class="breadcrumb-item active">Edit Kardus</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -62,7 +63,7 @@
                                         @enderror" value="{{ $ukuran }}" name="ukuran" id="ukuran"/>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-block">Edit Kardus</button>
+                            <button type="submit" class="btn btn-primary btn-block"><li class="fa fa-edit"></li>&nbsp; Edit Kardus</button>
                         </div>
                     </form>
                 </div>

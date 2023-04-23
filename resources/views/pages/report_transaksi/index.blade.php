@@ -9,7 +9,7 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="/">History Transaksi Kardus</a></li>
+                    <li class="breadcrumb-item active">History Transaksi Kardus</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -25,6 +25,7 @@
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                         <tr>
+                            <th>No</th>
                             <th>ID Kardus</th>
                             <th>ID User</th>
                             <th>Nama</th>
@@ -38,6 +39,7 @@
                         <tbody>
                             @foreach($dataTransaksi as $transaksi)
                                 <tr>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $transaksi->master_kardus_id }}</td>
                                     <td>{{ $transaksi->created_by }}</td>
                                     <td>{{ $transaksi->user->name }}</td>

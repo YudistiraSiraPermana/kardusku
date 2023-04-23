@@ -9,7 +9,8 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="/kardus">Daftar Kardus</a></li>
+                        <li class="breadcrumb-item"><a href="/kardus">Master Kardus</a></li>
+                        <li class="breadcrumb-item active">Tambah Kardus</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -47,7 +48,7 @@
                                     <input type="text" class="form-control" name="ukuran" id="ukuran"/>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-block">Add Kardus</button>
+                            <button type="submit" class="btn btn-primary btn-block"><li class="fa fa-plus"></li>&nbsp; Add Kardus</button>
                         </div>
                     </form>
                 </div>

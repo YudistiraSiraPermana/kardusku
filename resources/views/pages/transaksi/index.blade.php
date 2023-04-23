@@ -9,7 +9,7 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="transaksi">Transaksi</a></li>
+                        <li class="breadcrumb-item active">Transaksi</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -50,7 +50,7 @@
                                     <input type="text" class="form-control" name="id" id="id" readonly/>
                                     <br>
                                     <button type="submit" class="btn btn-primary btn-block">
-                                        Transaksi Kardus
+                                        <li class="fa fa-check"></li>&nbsp; Transaksi Kardus
                                     </button>
                                 </form>
                             </div>

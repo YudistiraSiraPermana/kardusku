@@ -9,7 +9,8 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="transaksi">Transaksi</a></li>
+                        <li class="breadcrumb-item"><a href="/transaksi">Transaksi</a></li>
+                        <li class="breadcrumb-item active">Detail Transaksi</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -60,7 +61,7 @@
                                 </div>
                                 <div class="form-group">
                                     <button type="button" class="btn btn-success btn-block" data-toggle="modal" id='btn_tambah' data-target=".modal-tambah">
-                                        Tambah Stok
+                                        <li class="fa fa-plus"></li>&nbsp; Tambah Stok
                                     </button>
                                     <form action="{{ route('transaksi.add.stock') }}" method="post" enctype="multipart/form-data">
                                     @csrf
@@ -85,7 +86,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        <button type="submit" class="btn btn-primary">Tambah Stok</button>
+                                                        <button type="submit" class="btn btn-primary"><li class="fa fa-plus"></li>&nbsp; Tambah Stok</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -94,7 +95,7 @@
                                 </div>
                                 <div class="form-group">
                                     <button type="button" class="btn btn-success btn-block" data-toggle="modal" id="btn_kurang" data-target=".modal-kurangi">
-                                        Kurangi Stok
+                                        <li class="fa fa-minus"></li>&nbsp; Kurangi Stok
                                     </button>
                                     <form action="{{ route('transaksi.add.subtract') }}" method="post" enctype="multipart/form-data">
                                         @csrf
@@ -119,7 +120,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        <button type="submit" class="btn btn-primary">Kurangi Stok</button>
+                                                        <button type="submit" class="btn btn-primary"> <li class="fa fa-minus"></li>&nbsp; Kurangi Stok</button>
                                                     </div>
                                                 </div>
                                             </div>

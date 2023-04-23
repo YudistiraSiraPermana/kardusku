@@ -9,7 +9,7 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="/">Daftar Kardus</a></li>
+                    <li class="breadcrumb-item active">Master Kardus</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -21,7 +21,7 @@
             <div class="card">
                 <div class="card-header">
 
-                    <a class="btn btn-primary" href="{{url('kardus/create')}}">Create Kardus</a>
+                    <a class="btn btn-primary" href="{{url('kardus/create')}}"><li class="fa fa-plus"></li>&nbsp; Create Kardus</a>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -43,14 +43,14 @@
                                     <td>{{ $masterKardus->jenis }}</td>
                                     <td>{{ $masterKardus->ukuran }}</td>
                                     <td>
-                                        <a href="{{url("kardus/edit/$masterKardus->id")}}" class="btn btn-primary btn-block">Edit</a>
-                                        <form action="{{url("kardus/destroy/$masterKardus->id")}}" method="POST" enctype="multipart/form-data">
+                                        <a href="{{url("kardus/edit/$masterKardus->id")}}" class="btn btn-primary"><li class="fa fa-edit"></li>&nbsp; Edit</a>
+                                        {{-- <form action="{{url("kardus/destroy/$masterKardus->id")}}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-primary btn-block">Delete</button>
-                                        </form>
+                                            <button type="submit" class="btn btn-primary btn-block"><li class="fa fa-trash"></li>&nbsp;Delete</button>
+                                        </form> --}}
                                         
-                                        <a href="{{url("kardus/generate/$masterKardus->id")}}" class="btn btn-primary btn-block">Print QR</a>
+                                        <a href="{{url("kardus/generate/$masterKardus->id")}}" class="btn btn-primary"><li class="fa fa-print"></li>&nbsp; Print QR</a>
                                     </td>
                                 </tr>
                             @endforeach
