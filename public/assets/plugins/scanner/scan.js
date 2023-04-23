@@ -7,15 +7,9 @@ scanner.addListener('scan', function (content) {
 
         // Extract the id and name values from the JSON data.
         const id = data.id;
-        const jenis = data.jenis;
-        const ukuran = data.ukuran;
-        const stock = data.stock;
 
         // Display the id and name values in separate text fields.
-        document.getElementById('qr-code-id').value = id;
-        document.getElementById('qr-code-jenis').value = jenis;
-        document.getElementById('qr-code-ukuran').value = ukuran;
-        document.getElementById('qr-code-stock').value = stock;
+        document.getElementById('id').value = id;
 
         // Hide the canvas element after a successful scan.
         const vidio = document.getElementById('preview');

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\MasterDataKardus;
+use Dflydev\DotAccessData\Data;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class MasterDataKardusController extends Controller
@@ -26,11 +28,17 @@ class MasterDataKardusController extends Controller
         $jenis  = $request->jenis;
         $ukuran = $request->ukuran;
 
+        $request->validate([
+            'jenis'     => 'required|string',
+            'ukuran'    => 'required|string',
+        ]);
+
         $data = new MasterDataKardus;
-        $data->id       = $custom_id;
-        $data->jenis    = $jenis;
-        $data->ukuran   = $ukuran;
-        $data->stock    = 0;
+        $data->id           = $custom_id;
+        $data->jenis        = $jenis;
+        $data->ukuran       = $ukuran;
+        $data->stock        = 0;
+        $data->created_by   = Auth::id();
         $data->save();
 
         return back()->with('success', 'Master Kardus telah diisi');
@@ -39,10 +47,32 @@ class MasterDataKardusController extends Controller
     {
         $master_kardus = MasterDataKardus::find($id);
         $data = [
-            'jenis'     => $master_kardus->jenis,
-            'ukuran'    => $master_kardus->ukuran,
+            'id'         => $master_kardus->id,
+            'jenis'      => $master_kardus->jenis,
+            'ukuran'     => $master_kardus->ukuran,
+            'created_by' => $master_kardus->created_by,
         ];
         return view('pages.masterdata_kardus.edit', $data);
+    }
+    public function update(request $request)
+    {
+        $id         = $request->id;
+        $jenis      = $request->jenis;
+        $ukuran     = $request->ukuran;
+        $created_by = Auth::id();
+
+        $request->validate([
+            'jenis'     => 'required|string',
+            'ukuran'    => 'required|string',
+        ]);
+
+        $master_kardus = MasterDataKardus::find($id);
+        $master_kardus->jenis       = $jenis;
+        $master_kardus->ukuran      = $ukuran;
+        $master_kardus->created_by  = $created_by;
+        $master_kardus->save();
+
+        return back()->with('success', 'Master Kardus telah diupdate');
     }
     public function destroy($id)
     {
@@ -51,16 +81,13 @@ class MasterDataKardusController extends Controller
     }
     public function generate($id)
     {
-        $master_kardus = MasterDataKardus::select('id', 'jenis', 'ukuran', 'stock')
+        $master_kardus = MasterDataKardus::select('id', 'jenis', 'ukuran', 'stock', 'created_by')
             ->where('id', $id)
             ->first();
         $data = [
-            'id'        => $master_kardus->id,
-            'jenis'     => $master_kardus->jenis,
-            'ukuran'    => $master_kardus->ukuran,
-            'stock'     => $master_kardus->stock,
+            'id' => $master_kardus->id,
         ];
-        $qrcode = QrCode::size(250)->generate(json_encode($data));
-        return view('pages.masterdata_kardus.generate', compact('qrcode'));
+        $qrcode = QrCode::size(230)->backgroundColor(255, 255, 0)->margin(1)->generate(json_encode($data));
+        return view('pages.masterdata_kardus.generate', compact('qrcode', 'data'));
     }
 }

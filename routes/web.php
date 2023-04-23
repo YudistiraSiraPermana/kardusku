@@ -23,13 +23,18 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('logout', 'logout');
 });
 
-Route::get('transaksi', [TransaksiController::class, 'index']);
-Route::get('transaksi/report', [TransaksiController::class, 'view']);
+Route::middleware(['auth'])->group(function () {
+    Route::get('transaksi', [TransaksiController::class, 'index'])->name('transaksi');
+    Route::get('transaksi/process/', [TransaksiController::class, 'process'])->name('transaksi.process');
+    Route::get('transaksi/report', [TransaksiController::class, 'view']);
+    Route::post('transaksi/stock/add', [TransaksiController::class, 'addStock'])->name('transaksi.add.stock');
+    Route::post('transaksi/stock/subtract', [TransaksiController::class, 'subtractStock'])->name('transaksi.add.subtract');
 
-Route::get('kardus', [MasterDataKardusController::class, 'index']);
-Route::get('kardus/create', [MasterDataKardusController::class, 'create']);
-Route::post('kardus/store', [MasterDataKardusController::class, 'store'])->name('kardus.store');
-Route::get('kardus/edit/{id}', [MasterDataKardusController::class, 'edit']);
-Route::put('kardus/update', [MasterDataKardusController::class, 'update'])->name('kardus.update');
-Route::delete('kardus/destroy/{id}', [MasterDataKardusController::class, 'destroy']);
-Route::get('kardus/generate/{id}', [MasterDataKardusController::class, 'generate']);
+    Route::get('kardus', [MasterDataKardusController::class, 'index']);
+    Route::get('kardus/create', [MasterDataKardusController::class, 'create']);
+    Route::post('kardus/store', [MasterDataKardusController::class, 'store'])->name('kardus.store');
+    Route::get('kardus/edit/{id}', [MasterDataKardusController::class, 'edit']);
+    Route::put('kardus/update', [MasterDataKardusController::class, 'update'])->name('kardus.update');
+    Route::delete('kardus/destroy/{id}', [MasterDataKardusController::class, 'destroy']);
+    Route::get('kardus/generate/{id}', [MasterDataKardusController::class, 'generate']);
+});

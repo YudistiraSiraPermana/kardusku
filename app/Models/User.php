@@ -42,4 +42,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function transaksi()
+    {
+        return $this->hasMany(Transaksi::class, 'created_by', 'id');
+    }
+    public function masterKardus()
+    {
+        return $this->hasMany(MasterDataKardus::class, 'created_by', 'id');
+    }
 }

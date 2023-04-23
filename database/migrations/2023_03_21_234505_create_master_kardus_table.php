@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('jenis');
             $table->string('ukuran');
             $table->bigInteger('stock')->nullable();
+            $table->foreignId('created_by')->references('id')->on('users');
             $table->timestamps();
         });
     }

@@ -27,7 +27,21 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    {{ $qrcode }}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="text-center">
+                                    {{ $qrcode }}
+                                </div>
+                                <div class="text-center">
+                                    <br>
+                                    @foreach($data as $master_kardus)
+                                        <input type="text" value="{{ $master_kardus }}" style="text-align:center;" readonly>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

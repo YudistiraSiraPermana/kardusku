@@ -36,16 +36,18 @@
                         </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>None</td>
-                                <td>None</td>
-                                <td>None</td>
-                                <td>None</td>
-                                <td>None</td>
-                                <td>None</td>
-                                <td>None</td>
-                                <td>None</td>
-                            </tr>
+                            @foreach($dataTransaksi as $transaksi)
+                                <tr>
+                                    <td>{{ $transaksi->master_kardus_id }}</td>
+                                    <td>{{ $transaksi->created_by }}</td>
+                                    <td>{{ $transaksi->user->name }}</td>
+                                    <td>{{ $transaksi->created_at }}</td>
+                                    <td>{{ $transaksi->master_kardus->jenis }}</td>
+                                    <td>{{ $transaksi->master_kardus->ukuran }}</td>
+                                    <td>{{ $transaksi->status }}</td>
+                                    <td>{{ $transaksi->jumlah }}</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                         <tfoot>
                             <tr>

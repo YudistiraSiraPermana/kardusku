@@ -76,4 +76,3 @@
         format: 'L'
     });
 </script>
-

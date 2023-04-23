@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('master_kardus_id')->references('id')->on('master_kardus');
             $table->bigInteger('jumlah');
             $table->string('status');
+            $table->foreignId('created_by')->references('id')->on('users');
             $table->timestamps();
         });
     }

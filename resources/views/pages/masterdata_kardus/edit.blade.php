@@ -38,6 +38,10 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <input type="text" class="form-control 
+                                        @error('id')
+                                            is-invalid
+                                        @enderror" value="{{ $id }}" name="id" id="id" readonly hidden/>
                                     <label>Jenis Kardus</label>
                                     <input type="text" class="form-control 
                                         @error('jenis')
@@ -47,6 +51,10 @@
                             </div>
                             <div class="col-12 col-sm-6">
                                 <div class="form-group">
+                                    <input type="text" class="form-control 
+                                        @error('created_by')
+                                            is-invalid
+                                        @enderror" value="{{ $created_by }}" name="created_by" id="created_by" readonly hidden/>
                                     <label>Ukuran kardus</label>
                                     <input type="text" class="form-control
                                         @error('ukuran')
