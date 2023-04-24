@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\MasterDataKardus;
 use App\Models\Transaksi;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redis;
@@ -74,5 +75,18 @@ class TransaksiController extends Controller
             'dataTransaksi'   => Transaksi::with('master_kardus', 'user')->orderBy('created_at', 'desc')->get()
         ];
         return view('pages.report_transaksi.index', $data);
+    }
+
+    public function filterByDate(Request $request)
+    {
+        $start_date = $request->input('start_date');
+        $end_date   = $request->input('end_date');
+
+        $filteredData = Transaksi::with('master_kardus', 'user')->whereBetween('created_at', [
+            Carbon::parse($start_date)->startOfDay(),
+            Carbon::parse($end_date)->endOfDay(),
+        ])->get();
+
+        return view('pages.report_transaksi.filter', ['data' => $filteredData]);
     }
 }

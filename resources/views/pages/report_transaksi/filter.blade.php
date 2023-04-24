@@ -101,7 +101,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                            @foreach($dataTransaksi as $transaksi)
+                            @foreach($data as $transaksi)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $transaksi->master_kardus_id }}</td>

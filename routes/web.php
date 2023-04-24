@@ -27,6 +27,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('transaksi', [TransaksiController::class, 'index'])->name('transaksi');
     Route::get('transaksi/process/', [TransaksiController::class, 'process'])->name('transaksi.process');
     Route::get('transaksi/report', [TransaksiController::class, 'view']);
+    Route::post('transaksi/report/filter', [TransaksiController::class, 'filterByDate'])->name('transaksi.filter');
     Route::post('transaksi/stock/add', [TransaksiController::class, 'addStock'])->name('transaksi.add.stock');
     Route::post('transaksi/stock/subtract', [TransaksiController::class, 'subtractStock'])->name('transaksi.add.subtract');
 
