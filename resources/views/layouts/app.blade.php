@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kardusku - Auto2000</title>
+    <title>Kardusku | Auto2000</title>
+    <link rel="icon" href="{{asset("auto2000.png")}}">
 
     @stack('prepend-style')
     @include('components.style')
