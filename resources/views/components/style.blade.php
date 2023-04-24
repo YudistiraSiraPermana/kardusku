@@ -26,3 +26,7 @@
 <link rel="stylesheet" href="{{asset("assets/plugins/scanner/scan.css")}}">
 {{-- Print --}}
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/plugins/print/print.css') }}" media="print">
+<!-- PWA  -->
+<meta name="theme-color" content="#6777ef"/>
+<link rel="apple-touch-icon" href="{{ asset('auto2000.PNG') }}">
+<link rel="manifest" href="{{ asset('/manifest.json') }}">

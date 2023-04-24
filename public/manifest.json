@@ -1,0 +1,17 @@
+{
+    "name": "Kardusku",
+    "short_name": "Kardusku",
+    "start_url": "/",
+    "background_color": "#6777ef",
+    "description": "Kardusku | Auto2000",
+    "display": "fullscreen",
+    "theme_color": "#6777ef",
+    "icons": [
+        {
+            "src": "auto2000.PNG",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
