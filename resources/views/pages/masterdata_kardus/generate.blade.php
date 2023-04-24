@@ -42,8 +42,9 @@
                                 <div class="text-center">
                                     <br>
                                     @foreach($data as $master_kardus)
-                                        <input type="text" value="{{ $master_kardus }}" style="text-align:center;" readonly>
+                                        <input type="text" value="id : {{ $master_kardus }}" style="text-align:center;" readonly>
                                     @endforeach
+                                    <button class="btn btn-primary print-button" onclick="window.print()">Print</button>
                                 </div>
                             </div>
                         </div>

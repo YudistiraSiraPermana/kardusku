@@ -46,7 +46,7 @@
 <script src={{asset("assets/plugins/datatables-buttons/js/buttons.html5.min.js")}}></script>
 <script src={{asset("assets/plugins/datatables-buttons/js/buttons.print.min.js")}}></script>
 <script src={{asset("assets/plugins/datatables-buttons/js/buttons.colVis.min.js")}}></script>
-
+{{-- Scanner --}}
 <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 <script src={{asset("assets/plugins/scanner/scan.js")}}></script>
 

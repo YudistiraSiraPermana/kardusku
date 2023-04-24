@@ -1,0 +1,23 @@
+@media print {
+
+    /* Hide the navigation bar */
+    .navbar {
+        display: none;
+    }
+
+    /* Increase the font size of the content */
+    body {
+        font-size: 16px;
+    }
+
+    /* Adjust the margins and padding of the content */
+    .content {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Hide the print button */
+    .print-button {
+        display: none;
+    }
+}

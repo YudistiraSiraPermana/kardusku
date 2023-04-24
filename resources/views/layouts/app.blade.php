@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kardusku</title>
+    <title>Kardusku - Auto2000</title>
 
     @stack('prepend-style')
     @include('components.style')
