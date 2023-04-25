@@ -187,6 +187,7 @@ return [
          */
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
         Ladumor\LaravelPwa\PWAServiceProvider::class,
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -214,6 +215,7 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'LaravelPwa' => \Ladumor\LaravelPwa\LaravelPwa::class,
+        'SweetAlert' => RealRashid\SweetAlert\Facades\Alert::class,
     ])->toArray(),
 
 ];

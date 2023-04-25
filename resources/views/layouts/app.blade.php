@@ -13,11 +13,11 @@
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
+    @include('sweetalert::alert')
 
+    @include('components.navbar')
 
-   @include('components.navbar')
-
-   @include('components.sidebar')
+    @include('components.sidebar')
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">

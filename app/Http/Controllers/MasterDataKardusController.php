@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use SweetAlert;
 use App\Models\MasterDataKardus;
 use Dflydev\DotAccessData\Data;
 use Illuminate\Http\Request;
@@ -41,7 +42,8 @@ class MasterDataKardusController extends Controller
         $data->created_by   = Auth::id();
         $data->save();
 
-        return back()->with('success', 'Master Kardus telah diisi');
+        SweetAlert::success('Success', 'Master Kardus telah diisi');
+        return redirect()->route('kardus');
     }
     public function edit($id)
     {
@@ -72,7 +74,8 @@ class MasterDataKardusController extends Controller
         $master_kardus->created_by  = $created_by;
         $master_kardus->save();
 
-        return back()->with('success', 'Master Kardus telah diupdate');
+        SweetAlert::success('Success', 'Master Kardus telah diupdate');
+        return redirect()->route('kardus');
     }
     public function destroy($id)
     {

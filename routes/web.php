@@ -33,7 +33,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('transaksi/stock/add', [TransaksiController::class, 'addStock'])->name('transaksi.add.stock');
     Route::post('transaksi/stock/subtract', [TransaksiController::class, 'subtractStock'])->name('transaksi.add.subtract');
 
-    Route::get('kardus', [MasterDataKardusController::class, 'index']);
+    Route::get('kardus', [MasterDataKardusController::class, 'index'])->name('kardus');
     Route::get('kardus/create', [MasterDataKardusController::class, 'create']);
     Route::post('kardus/store', [MasterDataKardusController::class, 'store'])->name('kardus.store');
     Route::get('kardus/edit/{id}', [MasterDataKardusController::class, 'edit']);

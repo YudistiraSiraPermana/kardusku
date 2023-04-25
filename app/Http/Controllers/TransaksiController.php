@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use SweetAlert;
 use App\Models\MasterDataKardus;
 use App\Models\Transaksi;
 use Carbon\Carbon;
@@ -53,7 +54,8 @@ class TransaksiController extends Controller
         $transaksi->created_by       = Auth::id();
         $transaksi->save();
 
-        return back()->with('success', 'Transaksi Berhasil');
+        SweetAlert::success('Success', 'Kardus Berhasil Ditambahkan');
+        return back();
     }
     public function subtractStock(Request $request)
     {
@@ -77,7 +79,8 @@ class TransaksiController extends Controller
         $transaksi->created_by       = Auth::id();
         $transaksi->save();
 
-        return back()->with('success', 'Transaksi Berhasil');
+        SweetAlert::success('Success', 'Kardus Berhasil Dikurangi');
+        return back();
     }
 
     public function view()
