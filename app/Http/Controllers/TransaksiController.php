@@ -88,7 +88,10 @@ class TransaksiController extends Controller
         $data = [
             'dataTransaksi'   => Transaksi::with('master_kardus', 'user')->orderBy('created_at', 'desc')->get()
         ];
-        return view('pages.report_transaksi.index', $data);
+        $total_kardus_plus = Transaksi::where('status', 'plus')->sum('jumlah');
+        $total_kardus_minus = Transaksi::where('status', 'minus')->sum('jumlah');
+        $total_kardus = $total_kardus_plus - $total_kardus_minus;
+        return view('pages.report_transaksi.index', $data, compact('total_kardus'));
     }
 
     public function filterByDate(Request $request)
@@ -106,6 +109,18 @@ class TransaksiController extends Controller
             Carbon::parse($end_date)->endOfDay(),
         ])->get();
 
-        return view('pages.report_transaksi.filter', ['data' => $filteredData]);
+        $total_kardus_plus = Transaksi::where('status', 'plus')->whereBetween('created_at', [
+            Carbon::parse($start_date)->startOfDay(),
+            Carbon::parse($end_date)->endOfDay(),
+        ])->sum('jumlah');
+
+        $total_kardus_minus = Transaksi::where('status', 'minus')->whereBetween('created_at', [
+            Carbon::parse($start_date)->startOfDay(),
+            Carbon::parse($end_date)->endOfDay(),
+        ])->sum('jumlah');
+
+        $total_kardus = $total_kardus_plus - $total_kardus_minus;
+
+        return view('pages.report_transaksi.filter', ['data' => $filteredData], compact('total_kardus'));
     }
 }

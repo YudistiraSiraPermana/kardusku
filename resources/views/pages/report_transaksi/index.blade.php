@@ -115,6 +115,12 @@
                                 </tr>
                             @endforeach
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="8" style="text-align:right"><strong>Jumlah</strong></td>
+                                <td><strong>{{ $total_kardus }}</strong></td>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
                 <!-- /.card-body -->
