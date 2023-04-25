@@ -34,6 +34,17 @@
                 <!-- /.card-header -->
                 <div class="card-body">
                     <form action="{{ route('kardus.update') }}" method="post" enctype="multipart/form-data">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>
+                                            {{ $error }}
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         @csrf
                         @method('PUT')
                         <div class="row">
@@ -47,7 +58,7 @@
                                     <input type="text" class="form-control 
                                         @error('jenis')
                                             is-invalid
-                                        @enderror" value="{{ $jenis }}" name="jenis" id="jenis"/>
+                                        @enderror" value="{{ $jenis }}" name="jenis" id="jenis" required/>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6">
@@ -60,7 +71,7 @@
                                     <input type="text" class="form-control
                                         @error('ukuran')
                                             is-invalid
-                                        @enderror" value="{{ $ukuran }}" name="ukuran" id="ukuran"/>
+                                        @enderror" value="{{ $ukuran }}" name="ukuran" id="ukuran" required/>
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary btn-block"><li class="fa fa-edit"></li>&nbsp; Edit Kardus</button>

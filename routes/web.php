@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\MasterDataKardusController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TransaksiController;
 use App\Models\MasterDataKardus;
 use Illuminate\Support\Facades\Route;
@@ -38,4 +40,8 @@ Route::middleware(['auth'])->group(function () {
     Route::put('kardus/update', [MasterDataKardusController::class, 'update'])->name('kardus.update');
     Route::delete('kardus/destroy/{id}', [MasterDataKardusController::class, 'destroy']);
     Route::get('kardus/generate/{id}', [MasterDataKardusController::class, 'generate']);
+
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::post('/password/update', [ChangePasswordController::class, 'update'])->name('password.update');
 });

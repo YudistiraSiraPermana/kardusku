@@ -24,14 +24,14 @@ class MasterDataKardusController extends Controller
 
     public function store(Request $request)
     {
-        $custom_id     = str_pad(20001 + MasterDataKardus::count(), 5, '0', STR_PAD_LEFT);
-        $jenis  = $request->jenis;
-        $ukuran = $request->ukuran;
-
         $request->validate([
             'jenis'     => 'required|string',
             'ukuran'    => 'required|string',
         ]);
+
+        $custom_id     = str_pad(20001 + MasterDataKardus::count(), 5, '0', STR_PAD_LEFT);
+        $jenis  = $request->jenis;
+        $ukuran = $request->ukuran;
 
         $data = new MasterDataKardus;
         $data->id           = $custom_id;
@@ -56,15 +56,15 @@ class MasterDataKardusController extends Controller
     }
     public function update(request $request)
     {
-        $id         = $request->id;
-        $jenis      = $request->jenis;
-        $ukuran     = $request->ukuran;
-        $created_by = Auth::id();
-
         $request->validate([
             'jenis'     => 'required|string',
             'ukuran'    => 'required|string',
         ]);
+
+        $id         = $request->id;
+        $jenis      = $request->jenis;
+        $ukuran     = $request->ukuran;
+        $created_by = Auth::id();
 
         $master_kardus = MasterDataKardus::find($id);
         $master_kardus->jenis       = $jenis;

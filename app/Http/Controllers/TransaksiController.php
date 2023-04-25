@@ -17,6 +17,9 @@ class TransaksiController extends Controller
     }
     public function process(Request $request)
     {
+        $request->validate([
+            'id'     => 'required',
+        ]);
         $id = $request->id;
         $master_kardus = MasterDataKardus::find($id);
         $data = [
@@ -30,6 +33,10 @@ class TransaksiController extends Controller
     }
     public function addStock(Request $request)
     {
+        $request->validate([
+            'jumlah'    => 'required|integer|min:1',
+        ]);
+
         $master_kardus_id   = $request->add_stock_id;
         $jumlah             = $request->jumlah;
         $status             = $request->status;
@@ -50,6 +57,10 @@ class TransaksiController extends Controller
     }
     public function subtractStock(Request $request)
     {
+        $request->validate([
+            'jumlah'    => 'required|integer|min:1',
+        ]);
+
         $master_kardus_id   = $request->subtract_stock_id;
         $jumlah             = $request->jumlah;
         $status             = $request->status;
@@ -79,6 +90,11 @@ class TransaksiController extends Controller
 
     public function filterByDate(Request $request)
     {
+        $request->validate([
+            'start_date'    => 'required|date',
+            'end_date'      => 'required|date',
+        ]);
+
         $start_date = $request->input('start_date');
         $end_date   = $request->input('end_date');
 

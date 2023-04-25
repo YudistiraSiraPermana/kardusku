@@ -64,6 +64,17 @@
                                         <li class="fa fa-plus"></li>&nbsp; Tambah Stok
                                     </button>
                                     <form action="{{ route('transaksi.add.stock') }}" method="post" enctype="multipart/form-data">
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>
+                                                            {{ $error }}
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
                                     @csrf
                                         <div class="modal fade modal-tambah" tabindex="-1" role="dialog" aria-hidden="true">
                                             <div class="modal-dialog modal-lg">
@@ -98,6 +109,17 @@
                                         <li class="fa fa-minus"></li>&nbsp; Kurangi Stok
                                     </button>
                                     <form action="{{ route('transaksi.add.subtract') }}" method="post" enctype="multipart/form-data">
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>
+                                                            {{ $error }}
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
                                         @csrf
                                         <div class="modal fade modal-kurangi" tabindex="-1" role="dialog" aria-hidden="true">
                                             <div class="modal-dialog modal-lg">

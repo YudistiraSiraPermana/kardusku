@@ -16,7 +16,7 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="" class="nav-link">Profil</a>
+            <a href="{{ route('profile.index') }}" class="nav-link">Profil</a>
         </li>
         <form action="{{url('logout')}}">
             @csrf

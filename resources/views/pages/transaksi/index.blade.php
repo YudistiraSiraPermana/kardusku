@@ -45,9 +45,20 @@
                             <div class="form-group">
                                 
                                 <form action="{{ route('transaksi.process')}}" enctype="multipart/form-data">
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>
+                                                        {{ $error }}
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
                                     @csrf
                                     <label>ID Kardus</label>
-                                    <input type="text" class="form-control" name="id" id="id" readonly/>
+                                    <input type="text" class="form-control" name="id" id="id" readonly required/>
                                     <br>
                                     <button type="submit" class="btn btn-primary btn-block">
                                         <li class="fa fa-check"></li>&nbsp; Transaksi Kardus
