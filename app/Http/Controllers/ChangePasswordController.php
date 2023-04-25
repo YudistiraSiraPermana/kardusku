@@ -17,7 +17,7 @@ class ChangePasswordController extends Controller
                     $fail('The old password is incorrect.');
                 }
             }],
-            'new_password' => ['required', 'confirmed'],
+            'new_password' => ['required', 'min:8', 'confirmed'],
         ]);
 
         User::find(auth()->user()->id)

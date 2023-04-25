@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 Route::controller(AuthController::class)->group(function () {
     Route::get('/', 'index')->name('login');
     Route::post('login/proses', 'proses');
+    Route::get('register', 'register');
+    Route::post('register/store', 'storeRegister');
     Route::get('logout', 'logout');
 });
 

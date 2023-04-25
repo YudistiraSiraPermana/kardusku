@@ -17,6 +17,13 @@ class ProfileController extends Controller
 
     public function update(Request $request)
     {
+        $request->validate(
+            [
+                'email' => 'required|email',
+                'name' => 'required|max:255',
+            ],
+        );
+
         $name   = $request->name;
         $email  = $request->email;
 

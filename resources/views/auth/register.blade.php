@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login | Kardusku</title>
+    <title>Register | Kardusku</title>
     <link rel="icon" href="{{asset("auto2000.png")}}">
 
     @stack('prepend-style')
@@ -19,15 +19,32 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <h5>Login</h5>
+                <h5>Register</h5>
                 <h2>KARDUSKU</h2>
             </div>
             <div class="card-body">
                 <img src={{asset("assets/img/auto2000.png")}}>
             </div>
             <div class="card-body">
-                <form action="{{ url('login/proses') }}" method="post">
+                <form action="{{ url('register/store') }}" method="post">
                     @csrf
+                    <div class="input-group mb-3">
+                        <input autofocus type="text" class="form-control
+                          @error('name')
+                              is-invalid
+                          @enderror
+                          " placeholder="Nama" name="name" value="{{ old('name') }}" required>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                        @error('name')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
                     <div class="input-group mb-3">
                         <input autofocus type="text" class="form-control
                           @error('email')
@@ -45,6 +62,7 @@
                         </div>
                         @enderror
                     </div>
+                    <div class="form-text">Password minimal 8 karakter.</div>
                     <div class="input-group mb-3">
                         <input type="password" class="form-control
                         @error('password')
@@ -62,13 +80,30 @@
                         </div>
                         @enderror
                     </div>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control
+                        @error('password_confirmation')
+                            is-invalid
+                        @enderror
+                        " placeholder="Ulangi Password" name="password_confirmation" required>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                        @error('password_confirmation')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
                     <!-- /.col -->
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        <button type="submit" class="btn btn-success btn-block"><li class="fa fa-save"></li>&nbsp; Register</button>
                     </div>
                     <!-- /.col -->
                     <br>
-                    <p class="text-center">Belum punya akun? <a href="/register">Register</a></p>
+                    <p class="text-center">Sudah Punya Akun? <a href="/">Login</a></p>
             </div>
             </form>
 
