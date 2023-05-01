@@ -21,5 +21,5 @@
 
 <!-- PWA  -->
 <meta name="theme-color" content="#6777ef" />
-<link rel="apple-touch-icon" href="{{ asset('auto2000.PNG') }}">
+<link rel="apple-touch-icon" href="{{ asset('auto2000.png') }}">
 <link rel="manifest" href="{{ asset('/manifest.json') }}">

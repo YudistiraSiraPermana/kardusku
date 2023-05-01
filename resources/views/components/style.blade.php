@@ -42,5 +42,5 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('/template_admin/vendors/print/print.css') }}" media="print">
 <!-- PWA  -->
 <meta name="theme-color" content="#6777ef" />
-<link rel="apple-touch-icon" href="{{ asset('auto2000.PNG') }}">
+<link rel="apple-touch-icon" href="{{ asset('auto2000.png') }}">
 <link rel="manifest" href="{{ asset('/manifest.json') }}">
