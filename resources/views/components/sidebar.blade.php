@@ -1,61 +1,58 @@
-<!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="{{url('transaksi')}}" class="brand-link">
-        <center>
-            <img src={{asset("assets/img/auto2000.png")}} style="width:50%">
-        </center> 
-    </a>
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="info">
-                @if (auth()->user()->name == null)
-                    {{url('/')}}
-                @else
-                    <a href="#" class="d-block">Hi, {{ auth()->user()->name }}</a>
-                @endif
-                
-            </div>
+<div class="col-md-3 left_col">
+    <div class="left_col scroll-view">
+        <div class="navbar nav_title" style="border: 0;">
+            <a href="{{url('transaksi')}}" class="brand-link">
+                <center>
+                    <img src={{asset("assets/img/auto2000.png")}} style="width:50%" class="img-fluid">
+                </center>
+            </a>
         </div>
 
+        <div class="clearfix"></div>
 
+        <!-- menu profile quick info -->
+        <div class="profile clearfix">
+            <div class="profile_info">
+                @if (auth()->user()->name == null)
+                {{url('/login')}}
+                @else
+                <span>Welcome,</span>
+                <h2>{{ auth()->user()->name }}</h2>
+                @endif
 
-        <!-- Sidebar Menu -->
-        <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <!-- Add icons to the links using the .nav-icon class
-                     with font-awesome or any other icon font library -->
-                <li class="nav-item">
-                    <a href="{{url('transaksi')}}" class="nav-link ">
-                        <i class="nav-icon fas fa-camera-retro"></i>
-                        <p>
+            </div>
+        </div>
+        <!-- /menu profile quick info -->
+
+        <br />
+
+        <!-- sidebar menu -->
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+                <h3>Menu</h3>
+                <ul class="nav side-menu">
+                    <li>
+                        <a href="{{url('/')}}" class="nav-link ">
+                            <i class="fa fa-camera-retro"></i>
                             Transaksi
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{url('transaksi/report')}}" class="nav-link ">
-                        <i class="nav-icon fas fa-clipboard-list"></i>
-                        <p>
-                            History Transaksi    
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{url('kardus')}}" class="nav-link ">
-                        <i class="nav-icon fas fa-coins"></i>
-                        <p>
-                            Master Data Kardus  
-                        </p>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <!-- /.sidebar-menu -->
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{url('transaksi/report')}}" class="nav-link ">
+                            <i class="fa fa-list-ul"></i>
+                            History Transaksi
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{url('kardus')}}" class="nav-link ">
+                            <i class="fa fa-cubes"></i>
+                            Master Data Kardus
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <!-- /sidebar menu -->
     </div>
-    <!-- /.sidebar -->
-    
-</aside>
+</div>

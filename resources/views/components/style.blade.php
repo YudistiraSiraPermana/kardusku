@@ -1,42 +1,46 @@
-<!-- Google Font: Source Sans Pro -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Meta, title, CSS, favicons, etc. -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap -->
+{{--
+<link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"> --}}
+<link href="{{ asset('/template_admin/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
 <!-- Font Awesome -->
-<link rel="stylesheet" href={{asset("assets/plugins/fontawesome-free/css/all.min.css")}}>
-<!-- Ionicons -->
-<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-<!-- Tempusdominus Bootstrap 4 -->
-<link rel="stylesheet" href={{asset("assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css")}}>
+<link href="{{ asset('/template_admin/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+<!-- NProgress -->
+<link href="{{ asset('/template_admin/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
 <!-- iCheck -->
-<link rel="stylesheet" href={{asset("assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css")}}>
-<!-- JQVMap -->
-<link rel="stylesheet" href={{asset("assets/plugins/jqvmap/jqvmap.min.css")}}>
-<!-- Theme style -->
-<link rel="stylesheet" href={{asset("assets/dist/css/adminlte.min.css")}}>
-<!-- overlayScrollbars -->
-<link rel="stylesheet" href={{asset("assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css")}}>
-<!-- Daterange picker -->
-<link rel="stylesheet" href={{asset("assets/plugins/daterangepicker/daterangepicker.css")}}>
-<!-- summernote -->
-<link rel="stylesheet" href={{asset("assets/plugins/summernote/summernote-bs4.min.css")}}>
+<link href="{{ asset('/template_admin/vendors/iCheck/skins/flat/green.css') }}" rel="stylesheet">
+<!-- Datatables -->
+<link href="{{ asset('/template_admin/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ asset('/template_admin/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css') }}"
+    rel="stylesheet">
+<link href="{{ asset('/template_admin/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css') }}"
+    rel="stylesheet">
+<link href="{{ asset('/template_admin/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css') }}"
+    rel="stylesheet">
+<link href="{{ asset('/template_admin/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css') }}"
+    rel="stylesheet">
+<!-- Dropzone.js -->
+<link href="{{ asset('/template_admin/vendors/dropzone/dist/min/dropzone.min.css') }}" rel="stylesheet">
+
+<!-- Custom Theme Style -->
+<link href="{{ asset('/template_admin/build/css/custom.min.css') }}" rel="stylesheet">
+
 <!-- DataTables -->
-<link rel="stylesheet" href={{asset("assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css")}}>
-<link rel="stylesheet" href={{asset("assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css")}}>
-<link rel="stylesheet" href={{asset("assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css")}}>
+<link rel="stylesheet" href={{asset("/template_admin/vendors/datatables-bs4/css/dataTables.bootstrap4.min.css")}}>
+<link rel="stylesheet"
+    href={{asset("/template_admin/vendors/datatables-responsive/css/responsive.bootstrap4.min.css")}}>
+<link rel="stylesheet" href={{asset("/template_admin/vendors/datatables-buttons/css/buttons.bootstrap4.min.css")}}>
+
 {{-- Scan --}}
-<link rel="stylesheet" href="{{asset("assets/plugins/scanner/scan.css")}}">
+<link rel="stylesheet" href="{{asset('/template_admin/vendors/scanner/scan.css')}}">
 {{-- Print --}}
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/plugins/print/print.css') }}" media="print">
+<link rel="stylesheet" type="text/css" href="{{ asset('/template_admin/vendors/print/print.css') }}" media="print">
 <!-- PWA  -->
-<meta name="theme-color" content="#6777ef"/>
+<meta name="theme-color" content="#6777ef" />
 <link rel="apple-touch-icon" href="{{ asset('auto2000.PNG') }}">
 <link rel="manifest" href="{{ asset('/manifest.json') }}">
-
-{{-- Login --}}
-<!-- Google Font: Source Sans Pro -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="{{ asset('/assets/plugins/fontawesome-free/css/all.min.css') }}">
-<!-- icheck bootstrap -->
-<link rel="stylesheet" href="{{ asset('/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-<!-- Theme style -->
-<link rel="stylesheet" href="{{ asset('/assets/dist/css/adminlte.min.css') }}">

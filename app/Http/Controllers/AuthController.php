@@ -29,7 +29,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
             $user = Auth::user();
 
-            return redirect()->intended('transaksi');
+            return redirect()->intended('/');
         }
 
         return back()->withErrors([

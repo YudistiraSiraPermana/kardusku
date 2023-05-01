@@ -1,55 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kardusku | Auto2000</title>
-    <link rel="icon" href="{{asset("auto2000.png")}}">
-
-    @stack('prepend-style')
+    {{-- style --}}
+    @stack('before-style')
     @include('components.style')
-    @stack('addon-style')
-
+    @stack('after-style')
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-    @include('sweetalert::alert')
 
-    @include('components.navbar')
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            {{-- Alert --}}
+            @include('sweetalert::alert')
 
-    @include('components.sidebar')
+            {{-- sidebar --}}
+            @include('components.navbar')
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        
-        <!-- /.content-header -->
+            {{-- navbar --}}
+            @include('components.sidebar')
 
-        <!-- Main content -->
-        <section class="content">
-            <div class="container-fluid">
-              @yield('content')
-            </div><!-- /.container-fluid -->
-        </section>
-        <!-- /.content -->
+            <!-- page content -->
+            <div class="right_col" role="main">
+                @stack('before-content')
+                @yield('content')
+                @stack('after-content')
+            </div>
+            <!-- /page content -->
+        </div>
+        <!-- footer content -->
+        <footer class="container-fluid py-2 text-white d-flex align-items-center" style="background-color:#778899">
+            <span class="mx-auto">
+                <strong>Copyright &copy; 2023 <a href="#">TIM Auto 2000</a>.</strong>
+                All rights reserved.
+            </span>
+        </footer>
+        <!-- /footer content -->
     </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <strong>Copyright &copy; 2023 <a href="#">TIM Auto 2000</a>.</strong>
-        All rights reserved.
-        
-    </footer>
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
-
-@stack('prepend-script')
-@include('components.script')
-@stack('addon-script')
+    {{-- script --}}
+    @stack('prepend-script')
+    @include('components.script')
+    @stack('addon-script')
 </body>
+
 </html>

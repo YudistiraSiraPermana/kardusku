@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::controller(AuthController::class)->group(function () {
-    Route::get('/', 'index')->name('login');
+    Route::get('login', 'index')->name('login');
     Route::post('login/proses', 'proses');
     Route::get('register', 'register');
     Route::post('register/store', 'storeRegister');
@@ -28,7 +28,7 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('transaksi', [TransaksiController::class, 'index'])->name('transaksi');
+    Route::get('/', [TransaksiController::class, 'index'])->name('transaksi');
     Route::get('transaksi/process/', [TransaksiController::class, 'process'])->name('transaksi.process');
     Route::get('transaksi/report', [TransaksiController::class, 'view']);
     Route::post('transaksi/report/filter', [TransaksiController::class, 'filterByDate'])->name('transaksi.filter');
