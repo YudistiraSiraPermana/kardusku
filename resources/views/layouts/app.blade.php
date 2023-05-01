@@ -32,7 +32,6 @@
         <footer class="container-fluid py-2 text-white d-flex align-items-center" style="background-color:#778899">
             <span class="mx-auto">
                 <strong>Copyright &copy; 2023 <a href="#">TIM Auto 2000</a>.</strong>
-                All rights reserved.
             </span>
         </footer>
         <!-- /footer content -->

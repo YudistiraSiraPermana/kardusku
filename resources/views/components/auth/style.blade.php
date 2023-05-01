@@ -18,3 +18,8 @@
 <link rel="stylesheet" href="{{ asset('/template_admin/vendors/icheck-bootstrap/icheck-bootstrap.min.css') }}">
 <!-- Theme style -->
 <link rel="stylesheet" href="{{ asset('/template_admin/build/css/adminlte.min.css') }}">
+
+<!-- PWA  -->
+<meta name="theme-color" content="#6777ef" />
+<link rel="apple-touch-icon" href="{{ asset('auto2000.PNG') }}">
+<link rel="manifest" href="{{ asset('/manifest.json') }}">

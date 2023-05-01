@@ -111,7 +111,7 @@
     <footer class="container-fluid py-2 bg-primary text-white d-flex align-items-center fixed-bottom">
         <div class="position-absolute d-flex gap-2">
         </div>
-        <span class="mx-auto">&copy; Auto2000 2023</span>
+        <span class="mx-auto"><strong>Copyright &copy; 2023 <a href="#">TIM Auto 2000</a>.</strong></span>
     </footer>
 
 </body>

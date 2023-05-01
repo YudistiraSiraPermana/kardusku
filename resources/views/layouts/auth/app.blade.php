@@ -28,6 +28,10 @@
             @stack('after-content')
         </div>
     </div>
+    {{-- script --}}
+    @stack('prepend-script')
+    @include('components.auth.script')
+    @stack('addon-script')
 </body>
 
 </html>
