@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Kardusku | Auto2000</title>
-    <link rel="icon" href="{{asset(" auto2000.png")}}">
+    <link rel="icon" href="{{asset('auto2000.png')}}">
 
 
     {{-- style --}}
