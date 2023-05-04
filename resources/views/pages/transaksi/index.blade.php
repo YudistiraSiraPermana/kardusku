@@ -53,7 +53,7 @@
                                 @endif
                                 @csrf
                                 <label>ID Kardus</label>
-                                <input type="text" class="form-control" name="id" id="id" readonly required />
+                                <input type="text" class="form-control" name="id" id="id" required />
                                 <br>
                                 <button type="submit" class="btn btn-primary btn-block">
                                     <li class="fa fa-check"></li>&nbsp; Transaksi Kardus
